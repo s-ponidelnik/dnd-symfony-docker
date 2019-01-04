@@ -1,3 +1,12 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+spellSchool:
+  path: /spellSchool
+  controller: App\Controller\SpellSchoolController::index
+source:
+  path: /source
+  controller: App\Controller\SourceController::index
+spell:
+  path: /spell
+  controller: App\Controller\SpellController::index
+class:
+  path: /class
+  controller: App\Controller\CharacterClassController::index

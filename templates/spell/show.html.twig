@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Spell{% endblock %}
+
+{% block body %}
+    <h1>Spell</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ spell.id }}</td>
+            </tr>
+            <tr>
+                <th>Identifier</th>
+                <td>{{ spell.identifier }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ spell.level }}</td>
+            </tr>
+            <tr>
+                <th>Casting_time</th>
+                <td>{{ spell.castingTime }}</td>
+            </tr>
+            <tr>
+                <th>Is_ritual</th>
+                <td>{{ spell.isRitual ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Concentration</th>
+                <td>{{ spell.concentration ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Range_distance</th>
+                <td>{{ spell.rangeDistance }}</td>
+            </tr>
+            <tr>
+                <th>Verbal_component</th>
+                <td>{{ spell.verbalComponent ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Somatic_component</th>
+                <td>{{ spell.somaticComponent ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Material_components</th>
+                <td>{{ spell.materialComponents }}</td>
+            </tr>
+            <tr>
+                <th>NameEn</th>
+                <td>{{ spell.nameEn }}</td>
+            </tr>
+            <tr>
+                <th>NameRu</th>
+                <td>{{ spell.nameRu }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionEn</th>
+                <td>{{ spell.descriptionEn }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionRu</th>
+                <td>{{ spell.descriptionRu }}</td>
+            </tr>
+            <tr>
+                <th>Casting_time_type</th>
+                <td>{{ spell.castingTimeType }}</td>
+            </tr>
+            <tr>
+                <th>Casting_time_description_ru</th>
+                <td>{{ spell.castingTimeDescriptionRu }}</td>
+            </tr>
+            <tr>
+                <th>Casting_time_description_en</th>
+                <td>{{ spell.castingTimeDescriptionEn }}</td>
+            </tr>
+            <tr>
+                <th>Duration_type</th>
+                <td>{{ spell.durationType }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ spell.duration }}</td>
+            </tr>
+            <tr>
+                <th>AreaType</th>
+                <td>{{ spell.areaType }}</td>
+            </tr>
+            <tr>
+                <th>AreaSize</th>
+                <td>{{ spell.areaSize }}</td>
+            </tr>
+            <tr>
+                <th>RangeType</th>
+                <td>{{ spell.rangeType }}</td>
+            </tr>
+            <tr>
+                <th>AreaSizeType</th>
+                <td>{{ spell.areaSizeType }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('spell_index') }}">back to list</a>
+
+    <a href="{{ path('spell_edit', {'id': spell.id}) }}">edit</a>
+
+    {{ include('spell/_delete_form.html.twig') }}
+{% endblock %}

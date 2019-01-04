@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SpellSchool index{% endblock %}
+
+{% block body %}
+    <h1>SpellSchool index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Identifier</th>
+                <th>NameEn</th>
+                <th>NameRu</th>
+                <th>DescriptionEn</th>
+                <th>DescriptionRu</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for spell_school in spell_schools %}
+            <tr>
+                <td>{{ spell_school.id }}</td>
+                <td>{{ spell_school.identifier }}</td>
+                <td>{{ spell_school.nameEn }}</td>
+                <td>{{ spell_school.nameRu }}</td>
+                <td>{{ spell_school.descriptionEn }}</td>
+                <td>{{ spell_school.descriptionRu }}</td>
+                <td>
+                    <a href="{{ path('spell_school_show', {'id': spell_school.id}) }}">show</a>
+                    <a href="{{ path('spell_school_edit', {'id': spell_school.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('spell_school_new') }}">Create new</a>
+{% endblock %}

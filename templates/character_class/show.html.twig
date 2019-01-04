@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CharacterClass{% endblock %}
+
+{% block body %}
+    <h1>CharacterClass</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ character_class.id }}</td>
+            </tr>
+            <tr>
+                <th>Identifier</th>
+                <td>{{ character_class.identifier }}</td>
+            </tr>
+            <tr>
+                <th>NameEn</th>
+                <td>{{ character_class.nameEn }}</td>
+            </tr>
+            <tr>
+                <th>NameRu</th>
+                <td>{{ character_class.nameRu }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionEn</th>
+                <td>{{ character_class.descriptionEn }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionRu</th>
+                <td>{{ character_class.descriptionRu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('character_class_index') }}">back to list</a>
+
+    <a href="{{ path('character_class_edit', {'id': character_class.id}) }}">edit</a>
+
+    {{ include('character_class/_delete_form.html.twig') }}
+{% endblock %}

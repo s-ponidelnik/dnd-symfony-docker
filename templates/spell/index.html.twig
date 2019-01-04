@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Spell index{% endblock %}
+
+{% block body %}
+    <h1>Spell index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Identifier</th>
+                <th>Level</th>
+                <th>Casting_time</th>
+                <th>Is_ritual</th>
+                <th>Concentration</th>
+                <th>Range_distance</th>
+                <th>Verbal_component</th>
+                <th>Somatic_component</th>
+                <th>Material_components</th>
+                <th>NameEn</th>
+                <th>NameRu</th>
+                <th>DescriptionEn</th>
+                <th>DescriptionRu</th>
+                <th>Casting_time_type</th>
+                <th>Casting_time_description_ru</th>
+                <th>Casting_time_description_en</th>
+                <th>Duration_type</th>
+                <th>Duration</th>
+                <th>AreaType</th>
+                <th>AreaSize</th>
+                <th>RangeType</th>
+                <th>sources</th>
+                <th>AreaSizeType</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for spell in spells %}
+            <tr>
+                <td>{{ spell.id }}</td>
+                <td>{{ spell.identifier }}</td>
+                <td>{{ spell.level }}</td>
+                <td>{{ spell.castingTime }}</td>
+                <td>{{ spell.isRitual ? 'Yes' : 'No' }}</td>
+                <td>{{ spell.concentration ? 'Yes' : 'No' }}</td>
+                <td>{{ spell.rangeDistance }}</td>
+                <td>{{ spell.verbalComponent ? 'Yes' : 'No' }}</td>
+                <td>{{ spell.somaticComponent ? 'Yes' : 'No' }}</td>
+                <td>{{ spell.materialComponents|join(',') }}</td>
+                <td>{{ spell.nameEn }}</td>
+                <td>{{ spell.nameRu }}</td>
+                <td>{{ spell.descriptionEn }}</td>
+                <td>{{ spell.descriptionRu }}</td>
+                <td>{{ spell.castingTimeType }}</td>
+                <td>{{ spell.castingTimeDescriptionRu }}</td>
+                <td>{{ spell.castingTimeDescriptionEn }}</td>
+                <td>{{ spell.durationType }}</td>
+                <td>{{ spell.duration }}</td>
+                <td>{{ spell.areaType }}</td>
+                <td>{{ spell.areaSize }}</td>
+                <td>{{ spell.rangeType }}</td>
+                <td>{{ spell.sources|join(',') }}</td>
+                <td>{{ spell.areaSizeType }}</td>
+                <td>
+                    <a href="{{ path('spell_show', {'id': spell.id}) }}">show</a>
+                    <a href="{{ path('spell_edit', {'id': spell.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="24">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('spell_new') }}">Create new</a>
+{% endblock %}

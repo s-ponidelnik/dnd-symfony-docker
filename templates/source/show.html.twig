@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Source{% endblock %}
+
+{% block body %}
+    <h1>Source</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ source.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ source.name }}</td>
+            </tr>
+            <tr>
+                <th>Official</th>
+                <td>{{ source.official ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ source.author }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('source_index') }}">back to list</a>
+
+    <a href="{{ path('source_edit', {'id': source.id}) }}">edit</a>
+
+    {{ include('source/_delete_form.html.twig') }}
+{% endblock %}

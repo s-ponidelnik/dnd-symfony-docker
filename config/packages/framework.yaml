@@ -1,4 +1,5 @@
 framework:
+    default_locale: 'en_EN'
     secret: '%env(APP_SECRET)%'
     #default_locale: en
     #csrf_protection: true
@@ -15,3 +16,6 @@ framework:
     #fragments: true
     php_errors:
         log: true
+    translator:
+        paths:
+            - '%kernel.project_dir%/src/Translations'
