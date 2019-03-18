@@ -9,7 +9,7 @@
 namespace App\Entity\Enum;
 
 
-class SpellDurationType
+class SpellDurationType extends Enum
 {
     const SECOND = 1;
     const ACTION = 2;
@@ -20,6 +20,6 @@ class SpellDurationType
     const INSTANTANEOUS = 8;
     const DAY = 9;
     const UNTIL_DISSIPATES = 10;
-    const SPECIAL=11;
-    const ROUND=12;
+    const SPECIAL = 11;
+    const ROUND = 12;
 }

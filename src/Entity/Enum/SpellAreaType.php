@@ -9,11 +9,11 @@
 namespace App\Entity\Enum;
 
 
-class SpellAreaType
+class SpellAreaType extends Enum
 {
     const RADIUS = 1;
     const CUBE = 2;
     const CONE = 3;
-    const HALF_SPHERE=4;
-    const LINE=5;
+    const HALF_SPHERE = 4;
+    const LINE = 5;
 }

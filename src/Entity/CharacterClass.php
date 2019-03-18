@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Enum\HitDice;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -53,6 +54,12 @@ class CharacterClass
      * @ORM\Column(type="text", nullable=true)
      */
     private $descriptionRu;
+
+    /**
+     * @var string $hitDice
+     * @ORM\Column(type="text", nullable=false)
+     */
+    private $hitDice;
 
     public function __construct()
     {
@@ -163,4 +170,15 @@ class CharacterClass
 
         return $this;
     }
+
+    public function getHitDice(): HitDice
+    {
+        return HitDice::getInstance($this->hitDice);
+    }
+
+    public function setHitDice(HitDice $hitDice): void
+    {
+        $this->hitDice = $hitDice->getValue();
+    }
+
 }

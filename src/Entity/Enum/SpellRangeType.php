@@ -9,7 +9,7 @@
 namespace App\Entity\Enum;
 
 
-class SpellRangeType
+class SpellRangeType extends Enum
 {
     const SELF = 0;
     const TOUCH = 1;
@@ -17,5 +17,5 @@ class SpellRangeType
     const SPECIAL = 3;
     const CAN_SEE = 4;
     const MILLE = 5;
-    const UNLIMITED=6;
+    const UNLIMITED = 6;
 }

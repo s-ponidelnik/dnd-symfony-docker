@@ -9,8 +9,8 @@
 namespace App\Entity\Enum;
 
 
-class SpellAreaSizeType
+class SpellAreaSizeType extends Enum
 {
-    const FT=1;
-    const MILLE=2;
+    const FT = 1;
+    const MILLE = 2;
 }
