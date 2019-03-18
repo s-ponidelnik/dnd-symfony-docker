@@ -6,14 +6,6 @@ namespace App\Entity\Collection\Interfaces;
 
 interface Collection extends CountableInterface, IteratorAggregate, ArrayAccess
 {
-    /**
-     * Adds an element at the end of the collection.
-     *
-     * @param mixed $element The element to add.
-     *
-     * @return bool Always TRUE.
-     */
-    public function add($element);
 
     /**
      * Clears the collection, removing all elements.

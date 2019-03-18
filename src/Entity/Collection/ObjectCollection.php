@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Entity\Collection;
-
-class ObjectCollection extends ArrayCollection
+use \App\Entity\Collection\Interfaces\ObjectCollection as ObjectCollectionInterface;
+class ObjectCollection extends ArrayCollection implements ObjectCollectionInterface
 {
     /** @var string $className */
     private $className;

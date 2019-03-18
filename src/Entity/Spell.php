@@ -5,11 +5,11 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-
+use \App\Entity\Interfaces\Spell as SpellInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SpellRepository")
  */
-class Spell
+class Spell implements SpellInterface
 {
     /**
      * @ORM\Id()

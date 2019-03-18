@@ -2,7 +2,9 @@
 
 namespace App\Entity\Enum;
 
-abstract class Enum
+use App\Entity\Interfaces\Entity;
+
+abstract class Enum implements Entity
 {
     /** @var array $cache */
     protected static $cache = [];

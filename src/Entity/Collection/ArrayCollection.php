@@ -4,8 +4,8 @@ namespace App\Entity\Collection;
 
 use ArrayIterator;
 use Closure;
-
-class ArrayCollection
+use \App\Entity\Collection\Interfaces\ArrayCollection as ArrayCollectionInterface;
+class ArrayCollection implements ArrayCollectionInterface
 {
     /** @var array $elements */
     private $elements;
